@@ -6,7 +6,7 @@ async function createInsertClstTable(conn) {
             INSERT INTO cluster VALUES  ('ClusterA', 'start', NOW(), 1), ('ClusterB', 'Stop', NOW(), 2), ('ClusterC', 'Running', NOW(), 3);
     `, (err) => {
             if (err) return reject(err);
-            resolve();
+            resolve("cluster created");
         });
     });
 }
@@ -17,7 +17,7 @@ async function readClstTable(conn) {
             if (err) return reject(err);
             console.log("CLUSTER")
             console.table(rows);
-            resolve();
+            resolve("cluster fetched successfully");
         });
     });
 }

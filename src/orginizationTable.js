@@ -6,7 +6,7 @@ async function createInsertOrgTable(conn) {
             INSERT INTO orginization VALUES (1, 'OrgOne', 'created', NOW()), (2, 'OrgTwo', 'created', NOW()), (3, 'OrgThree', 'created', NOW()), (4, 'OrgFour', 'created', NOW());
     `, (err) => {
             if (err) return reject(err);
-            resolve();
+            resolve("orginization created");
         });
     });
 }
@@ -17,7 +17,7 @@ async function readOrgTable(conn) {
             if (err) return reject(err);
             console.log("ORGINIZATION")
             console.table(rows);
-            resolve();
+            resolve("orginization fetched successfully");
         });
     });
 }
